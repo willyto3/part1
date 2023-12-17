@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import Note from './components/Note'
+
 const Display = ({ counter }) => {
   return <div>{counter}</div>
 }
@@ -22,7 +24,7 @@ const Hello = ({ name, age }) => {
   )
 }
 
-const App = () => {
+const App = ({ notes }) => {
   const [counter, setCounter] = useState(0)
   console.log('rendering with counter value', counter)
 
@@ -41,8 +43,28 @@ const App = () => {
     setCounter(0)
   }
 
+  const result = notes.map((note) => note.id)
+  console.log(result)
+
   return (
     <>
+      <div>
+        <h1>Notes</h1>
+        <ul>
+          <li>{notes[0].content}</li>
+          <li>{notes[1].content}</li>
+          <li>{notes[2].content}</li>
+        </ul>
+      </div>
+
+      <div>
+        <h1>Notes</h1>
+        <ul>
+          {notes.map((note) => (
+            <Note key={note.id} note={note} />
+          ))}
+        </ul>
+      </div>
       <div>
         <Display counter={counter} />
       </div>
