@@ -24,19 +24,7 @@ const Hello = ({ name, age }) => {
   )
 }
 
-<<<<<<< HEAD
 const App = ({ notes }) => {
-=======
-const History = (props) => {
-  if (props.allClicks.length === 0) {
-    return <div>the app is used by pressing the buttons </div>
-  }
-
-  return <div>button press history: {props.allClicks.join(' ')}</div>
-}
-
-const App = () => {
->>>>>>> 3f56d0cff54d0339b6559df4d395a388eb23bce8
   const [counter, setCounter] = useState(0)
   const [left, setLeft] = useState(0)
   const [right, setRight] = useState(0)
@@ -60,33 +48,12 @@ const App = () => {
     setCounter(0)
   }
 
-<<<<<<< HEAD
   const result = notes.map((note) => note.id)
   console.log(result)
-=======
-  const handleLeftClick = () => {
-    setAll(allClicks.concat('L'))
-    console.log('left before', left)
-    const updatedLeft = left + 1
-    setLeft(updatedLeft)
-    console.log('left after', updatedLeft)
-    setTotal(updatedLeft + right)
-  }
-
-  const handleRightClick = () => {
-    setAll(allClicks.concat('R'))
-    console.log('right before', right)
-    const updatedRight = right + 1
-    setRight(updatedRight)
-    console.log('right after', updatedRight)
-    setTotal(left + updatedRight)
-  }
->>>>>>> 3f56d0cff54d0339b6559df4d395a388eb23bce8
 
   return (
     <>
       <div>
-<<<<<<< HEAD
         <h1>Notes</h1>
         <ul>
           <li>{notes[0].content}</li>
@@ -104,18 +71,6 @@ const App = () => {
         </ul>
       </div>
       <div>
-=======
-        {left}
-        <Button onSmash={handleLeftClick} text='Left'/>
-        <Button onSmash={handleRightClick} text='Right'/>
-        
-        {right}
-        <History allClicks={allClicks} />
-        <p>total: {total}</p>
-      </div>
-
-      <div>
->>>>>>> 3f56d0cff54d0339b6559df4d395a388eb23bce8
         <Display counter={counter} />
       </div>
       <Button handleClick={decreaseByOne} text='Minus' />
